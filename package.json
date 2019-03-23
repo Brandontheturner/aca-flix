@@ -19,7 +19,8 @@
     "react-redux": "^5.0.4",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
-    "start": "^5.1.0"
+    "start": "^5.1.0",
+    "thunk": "0.0.1"
   },
   "scripts": {
     "start": "nf start",
