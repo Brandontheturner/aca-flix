@@ -1,6 +1,4 @@
 export default {
-  state = {
-    searchResults: [],
-    myMovieList: []
- }
+  searchResults: [],
+  myMovieList: []
 };

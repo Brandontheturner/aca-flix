@@ -6,16 +6,16 @@ function movieSearch(state = [], action) {
   }
   return state;
 }
-function searchResults(state = [], action) {
-  if (action.type === "SEARCH_RESULTS_LOADED") {
-    return action.value;
-  }
-  return state;
-}
+// function searchResults(state = [], action) {
+//   if (action.type === "SEARCH_RESULTS_LOADED") {
+//     return action.value;
+//   }
+//   return state;
+// }
 
 const rootReducer = combineReducers({
-  movieSearch,
-  searchResults
+  movieSearch
+  // searchResults
 });
 
 export default rootReducer;
