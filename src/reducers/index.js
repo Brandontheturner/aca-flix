@@ -1,4 +1,4 @@
-import CombineReducers, { combineReducers } from "redux";
+import { combineReducers } from "redux";
 
 function movieSearch(state = [], action) {
   if (action.type === "MY_MOVIE_LIST_LOADED") {
@@ -6,12 +6,12 @@ function movieSearch(state = [], action) {
   }
   return state;
 }
-// function searchResults(state = [], action) {
-//   if (action.type === "SEARCH_RESULTS_LOADED") {
-//     return action.value;
-//   }
-//   return state;
-// }
+function searchResults(state = [], action) {
+  if (action.type === "SEARCH_RESULTS_LOADED") {
+    return action.value;
+  }
+  return state;
+}
 
 const rootReducer = combineReducers({
   movieSearch
