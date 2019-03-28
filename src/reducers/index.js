@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 
-function movieSearch(state = [], action) {
+function myMovieList(state = [], action) {
   if (action.type === "MY_MOVIE_LIST_LOADED") {
     return action.value;
   }
@@ -14,7 +14,7 @@ function searchResults(state = [], action) {
 }
 
 const rootReducer = combineReducers({
-  movieSearch,
+  myMovieList,
   searchResults
 });
 

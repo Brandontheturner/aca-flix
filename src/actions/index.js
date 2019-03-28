@@ -39,9 +39,10 @@ export const loadSearch = searchTerm => dispatch => {
     .then(movies => {
       dispatch({
         type: "SEARCH_RESULTS_LOADED",
-        value: movies.results
+        value: movies.data.results
       });
-    });
+    })
+    .catch(error => console.log(error));
 };
 
 export const saveMyMovie = movie => dispatch => {

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import "./App.css";
 import Logo from "./Logo.js";
@@ -25,4 +26,15 @@ class App extends Component {
     );
   }
 }
-export default App;
+
+const mapStateToProps = state => {
+  return {
+    searchResults: state.searchResults,
+    myMovieList: state.myMovieList
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  null
+)(App);
