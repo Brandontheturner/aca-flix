@@ -3,17 +3,24 @@ import { connect } from "react-redux";
 import { loadSearch } from "../actions";
 
 class SearchBox extends Component {
-  constructor() {
-    super();
-  }
+  state = {
+    value: ""
+  };
+
+  handleChange = e => {
+    this.setState({ value: e.target.value });
+  };
+
   render() {
     return (
       <div id="search" className="Search">
         <input
+          value={this.state.value}
+          onChange={this.handleChange}
           onKeyUp={e => {
             /* this is so th search will only be done on enter key */
             if (this.props.loadSearch && e.key === "Enter") {
-              this.props.loadSearch("goonies");
+              this.props.loadSearch(this.state.value);
             }
           }}
           type="search"

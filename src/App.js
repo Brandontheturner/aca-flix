@@ -8,6 +8,7 @@ import Hero from "./components/Hero";
 import SearchBox from "./components/SearchBox";
 import Navigation from "./components/Navigation";
 import UserProfile from "./components/UserProfile";
+import { loadMyMovieList } from "./actions";
 
 class App extends Component {
   render() {
@@ -34,7 +35,13 @@ const mapStateToProps = state => {
   };
 };
 
+const mapDispatchToProps = dispatch => {
+  return {
+    loadMyMovieList: searchResults => dispatch(loadMyMovieList(searchResults))
+  };
+};
+
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(App);
