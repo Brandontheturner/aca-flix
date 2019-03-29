@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import ListToggle from "../components/ListToggle";
-import { savMyMovie, removeMyMovie } from "../actions";
+import { saveMyMovie, removeMyMovie } from "../actions";
 
 class ListToggle extends Component {
   constructor(props) {

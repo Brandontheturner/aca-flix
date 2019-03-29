@@ -4,7 +4,7 @@ import { loadSearch } from "../actions";
 
 class SearchBox extends Component {
   state = {
-    value: ""
+    searchTerm: ""
   };
 
   handleChange = e => {
@@ -16,7 +16,7 @@ class SearchBox extends Component {
       <div id="search" className="Search">
         <input
           value={this.state.value}
-          onChange={this.handleChange}
+          onChange={this.searchTerm}
           onKeyUp={e => {
             /* this is so th search will only be done on enter key */
             if (this.props.loadSearch && e.key === "Enter") {
