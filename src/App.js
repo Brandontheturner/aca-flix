@@ -8,6 +8,10 @@ import SearchBox from "./components/SearchBox";
 import Navigation from "./components/Navigation";
 import UserProfile from "./components/UserProfile";
 import { loadMyMovieList } from "./actions";
+import propTypes from 'prop-types';
+
+
+componentDidMount { this.props.loadMyMovieList()};
 
 class App extends Component {
   render() {
@@ -26,6 +30,8 @@ class App extends Component {
     );
   }
 }
+
+
 
 const mapStateToProps = state => {
   return {
