@@ -13,9 +13,7 @@ function searchResults(state = [], action) {
   return state;
 }
 
-const rootReducer = combineReducers({
+export default combineReducers({
   myMovieList,
   searchResults
 });
-
-export default rootReducer;

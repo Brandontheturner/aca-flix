@@ -2,6 +2,7 @@ import React from "react";
 import ListToggle from "../components/ListToggle";
 
 function Item(props) {
+  console.log("Item", props);
   let name = "";
   let backDrop =
     "http://image.tmdb.org/t/p/original" + props.movie.backdrop_path;
@@ -22,4 +23,4 @@ function Item(props) {
     </div>
   );
 }
-export default ListToggle;
+export default Item;

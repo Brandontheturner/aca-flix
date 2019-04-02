@@ -15,12 +15,15 @@ class SearchBox extends Component {
     return (
       <div id="search" className="Search">
         <input
-          value={this.state.value}
-          onChange={this.searchTerm}
+          onChange={e => this.setState({ searchTerm: e.target.value })}
           onKeyUp={e => {
             /* this is so th search will only be done on enter key */
-            if (this.props.loadSearch && e.key === "Enter") {
-              this.props.loadSearch(this.state.value);
+            if (
+              this.props.loadSearch &&
+              e.key === "Enter" &&
+              this.state.searchTerm
+            ) {
+              this.props.loadSearch(this.state.searchTerm);
             }
           }}
           type="search"

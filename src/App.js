@@ -8,13 +8,15 @@ import SearchBox from "./components/SearchBox";
 import Navigation from "./components/Navigation";
 import UserProfile from "./components/UserProfile";
 import { loadMyMovieList } from "./actions";
-import propTypes from 'prop-types';
-
-
-componentDidMount { this.props.loadMyMovieList()};
+import propTypes from "prop-types";
 
 class App extends Component {
+  componentDidMount() {
+    this.props.loadMyMovieList();
+  }
+
   render() {
+    console.log("App", this.props);
     return (
       <div>
         <header className="Header">
@@ -31,8 +33,6 @@ class App extends Component {
   }
 }
 
-
-
 const mapStateToProps = state => {
   return {
     searchResults: state.searchResults,
@@ -40,13 +40,7 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    loadMyMovieList: searchResults => dispatch(loadMyMovieList(searchResults))
-  };
-};
-
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  { loadMyMovieList }
 )(App);
